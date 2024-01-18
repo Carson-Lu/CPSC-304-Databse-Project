@@ -1,0 +1,52 @@
+
+/* The following code for the tabs was copied from 
+https://medium.com/allenhwkim/how-to-build-tabs-only-with-css-844718d7de2f */
+
+input[type=radio] { display: none; }    /* hide radio buttons */
+input + label { display: inline-block } /* show labels in line */
+input ~ .tab { display: none }          /* hide contents */
+/* show contents only for selected tab */
+#tab1:checked ~ .tab.content1,
+#tab2:checked ~ .tab.content2,
+#tab3:checked ~ .tab.content3,
+#tab4:checked ~ .tab.content4,
+#tab5:checked ~ .tab.content5,
+#tab6:checked ~ .tab.content6,
+#tab7:checked ~ .tab.content7,
+#tab8:checked ~ .tab.content8,
+#tab9:checked ~ .tab.content9,
+#tab10:checked ~ .tab.content10,
+#tab11:checked ~ .tab.content11,
+#tab12:checked ~ .tab.content12,
+#tab13:checked ~ .tab.content13,
+#tab14:checked ~ .tab.content14,
+#tab15:checked ~ .tab.content15,
+#tab16:checked ~ .tab.content16,
+#tab17:checked ~ .tab.content17,
+#tab18:checked ~ .tab.content18,
+#tab19:checked ~ .tab.content19,
+#tab20:checked ~ .tab.content20,
+#tab21:checked ~ .tab.content21,
+#tab22:checked ~ .tab.content22 { display: block; }
+
+/*input + label {             !* box with rounded corner *!*/
+/*    border: 1px solid #999;*/
+/*    background: #EEE;*/
+/*    padding: 4px 12px;*/
+/*    border-radius: 4px 4px 0 0;*/
+/*    position: relative;*/
+/*    top: 1px;*/
+/*  }*/
+/*  input:checked + label {     !* white background for selected tab *!*/
+/*    background: #FFF;*/
+/*    border-bottom: 1px solid transparent;*/
+/*  }*/
+/*  input ~ .tab {          !* grey line between tab and contents *!*/
+/*    border-top: 1px solid #999;*/
+/*    padding: 12px;*/
+/*  }*/
+
+/*  table, th, td {*/
+/*    border: 1px solid black;*/
+/*    margin-bottom: 12px;*/
+/*  }*/

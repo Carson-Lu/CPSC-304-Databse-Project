@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CPSC 304 Project Group 11</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1> CPSC 304 Project Group 11 Database Demo </h1>
+
+<hr/>
+<hr/>
+<h2>NOTE: values are case sensitive and if you enter in the wrong case, the update statement will not do anything.</h2>
+<hr/>
+
+<h2>Reset</h2>
+<p>If you wish to reset the table press on the reset button. If this is the first time you're running this page, you
+    MUST use reset</p>
+
+<form method="POST" action="index.php">
+    <!-- if you want another page to load after the button is clicked, you have to specify that page in the action parameter -->
+    <input type="hidden" id="resetTablesRequest" name="resetTablesRequest">
+    <p><input type="submit" value="Reset" name="reset"></p>
+</form>
+
+<hr/>
+
+<h2>Insert data into UserData</h2>
+<form method="POST" action="index.php"> <!--refresh page when submitted-->
+    <input type="hidden" id="insertQueryRequest" name="insertQueryRequest">
+    <label for="emailInsert">Email: </label>
+    <input type="text" id="emailInsert" name="emailInsert"> <br/><br/>
+    <label for="fnameInsert">First Name: </label>
+    <input type="text" id="fnameInsert" name="fnameInsert"> <br/><br/>
+    <label for="lnameInsert">Last Name: </label>
+    <input type="text" id="lnameInsert" name="lnameInsert"> <br/><br/>
+    <label for="ageInsert">Age: </label>
+    <input type="text" id="ageInsert" name="ageInsert"> <br/><br/>
+    <label for="countryInsert">Country: </label>
+    <input type="text" id="countryInsert" name="countryInsert"> <br/><br/>
+    <label for="phoneNumberInsert">Phone Number: </label>
+    <input type="text" id="phoneNumberInsert" name="phoneNumberInsert"> <br/><br/>
+    <input type="submit" value="Insert" name="insertSubmitInsert"></p>
+</form>
+
+<hr/>
+
+<h2>Delete data in UserData</h2>
+<p>Remove a user from the database (input their email)</p>
+
+<form method="POST" action="index.php"> <!--refresh page when submitted-->
+    <input type="hidden" id="deleteQueryRequest" name="deleteQueryRequest">
+    <label for = "emailDelete">Email to delete: </label>
+    <input type="text" id = "emailDelete" name="email"> <br/><br/>
+    <input type="submit" value="Delete" name="deleteSubmit"></p>
+</form>
+
+<hr/>
+
+<h2>Update data in UserData</h2>
+<p>Input their OLD EMAIL and their NEWLY UPDATED EMAIL. If you do not want to change the email, leave the SAME email
+    back in. All values must be updated, you can insert old values as well</p>
+
+
+<form method="POST" action="index.php"> <!--refresh page when submitted-->
+    <input type="hidden" id="updateQueryRequest" name="updateQueryRequest">
+    <label for="oldEmailUpdate">Old Email: </label>
+    <input type="text" id="oldEmailUpdate" name="oldEmailUpdate"> <br/><br/>
+    <label for="newEmailUpdate">New Email: </label>
+    <input type="text" id="newEmailUpdate" name="newEmailUpdate"> <br/><br/>
+    <label for="fnameUpdate">First Name: </label>
+    <input type="text" id="fnameUpdate" name="fnameUpdate"> <br/><br/>
+    <label for="lnameUpdate">Last Name: </label>
+    <input type="text" id="lnameUpdate" name="lnameUpdate"> <br/><br/>
+    <label for="ageUpdate">Age: </label>
+    <input type="text" id="ageUpdate" name="insNameUpdate"> <br/><br/>
+    <label for="countryUpdate">Country: </label>
+    <input type="text" id="countryUpdate" name="countryUpdate"> <br/><br/>
+    <label for="phoneNumberUpdate">Phone Number:</label>
+    <input type="text" id="phoneNumberUpdate" name="phoneNumberUpdate"><br/><br/>
+    <input type="submit" value="Update" name="updateSubmit"></p>
+</form>
+
+<hr/>
+
+<h2>Count the number of entries in UserData</h2>
+<form method="GET" action="index.php"> <!--refresh page when submitted-->
+    <input type="hidden" id="countTupleRequest" name="countTupleRequest">
+    <input type="submit" name="countTuples"></p>
+</form>
+
+<hr/>
+
+<h2>Select (filter data and find all UserData from a certain country) data in UserData</h2>
+
+<form method="POST" action="index.php"> <!--refresh page when submitted-->
+    <input type="hidden" id="selectQueryRequest" name="selectQueryRequest">
+    <label for="countrySelect">Country: </label>
+    <input type="text" id="countrySelect" name = "email"> <br/><br/>
+    <input type="submit" value="Filter" name="deleteSubmit"></p>
+</form>
+
+<hr/>
+
+<h2>Project (select what rows you would like to see) data in UserData</h2>
+
+<form method="POST" action="index.php"> <!--refresh page when submitted-->
+    <input type="hidden" id="projectionQueryRequest" name="projectionQueryRequest">
+    <input type="checkbox" id="emailCheckbox" name="emailCheckbox" checked>
+    <label for="emailCheckbox">Email</label>
+    <input type="checkbox" id="firstnameCheckbox" name="firstnameCheckbox" checked>
+    <label for="firstnameCheckbox">First Name</label>
+    <input type="checkbox" id="lastnameCheckbox" name="lastnameCheckbox" checked>
+    <label for="lastnameCheckbox">Last Name</label>
+    <input type="checkbox" id="ageCheckbox" name="ageCheckbox" checked>
+    <label for="ageCheckbox">Age</label>
+    <input type="checkbox" id="countryCheckbox" name="countryCheckbox" checked>
+    <label for="countryCheckbox">Country</label>
+    <input type="checkbox" id="phoneCheckbox" name="phoneCheckbox" checked>
+    <label for="phoneCheckbox">Phone</label>
+    <input type="submit" value="Update Table" name="projectionSubmit"></p>
+</form>
+
+<!--TODO add a table-->
+
+<hr/>
+
+<h2>Join data in UserData and SubscriptionCosts </h2>
+<p>Find people based off of their subscription billing type</p>
+<form method="POST" action="index.php"> <!--refresh page when submitted-->
+    <input type="hidden" id="joinQueryRequest" name="joinQueryRequest">
+    <input type="submit" value="Select" name="joinSubmit"></p>
+</form>
+
+<hr/>
+
+
+<h2>Group by data in UserData</h2>
+<form method="POST" action="index.php"> <!--refresh page when submitted-->
+    <input type="submit" value="Get Data" name="groupBySubmit"></p>
+</form>
+
+<hr/>
+
+
+<h2>Something with HAVING </h2>
+<form method="POST" action="index.php"> <!--refresh page when submitted-->
+    <input type="hidden" id="havingRequest" name="havingRequest">
+</form>
+
+<hr/>
+
+<h2>Nested Group by </h2>
+<form method="POST" action="index.php"> <!--refresh page when submitted-->
+    <input type="hidden" id="nestedGroupRequest" name="nestedGroupRequest">
+</form>
+
+<hr/>
+
+<h2>Division</h2>
+<form method="POST" action="index.php"> <!--refresh page when submitted-->
+    <input type="hidden" id="divisionRequest" name=divisionRequest">
+</form>
+
+</body>
+</html>
